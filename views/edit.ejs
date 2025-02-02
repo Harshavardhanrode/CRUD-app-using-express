@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("includes/nav.ejs") %>
+    <br><br>
+    
+    <div class="form_container">
+        <form method="post" action="/show/<%=user.id%>?_method=PATCH">
+        <table>
+            <tr>
+                <td><label for="">Email:</label></td>
+                <td><%=user.email%></td>
+            </tr>
+            <tr>
+                <td><label for="">User id :</label></td>
+                <td><%=user.id%></td>
+            </tr>
+            <tr>
+                <td><label for="">Edit Username</label></td>
+                <td><input name="form_username"  maxlength="45" value="<%= user.username %>"></td>
+            </tr>
+            <tr>
+                <td><label for="">Enter password :</label></td>
+                <td><input type="password" name="form_password" placeholder="Enter password"></td>
+            </tr>
+        </table>
+        <br>
+        <button>Update</button>
+    </form>
+    </div>
+    
+        
+        
+        
+
+
+ 
+    
+</body>
+</html>

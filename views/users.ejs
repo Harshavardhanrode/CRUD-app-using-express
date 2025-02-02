@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        table,th,tr,td{
+            border: 2px solid black;
+           
+        }
+        th,td{
+            padding: 4px 40px;
+        }
+        #add{
+            border: none;
+        }
+        .container1{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <%- include("includes/nav.ejs") %>
+    <div class="container1">
+        <table>
+            <tr>
+                <th>User id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Edit data</th>
+                <th>Delete data</th>
+                
+            </tr>
+            <%for(let user of results ){%>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td><form action='/show/<%= user.id %>/edit' method="get"><button>Edit Content</button></form></td>
+                    <td><form action="/show/<%= user.id %>?_method=DELETE" method="post"><button>Delete</button></form></td>
+                </tr>
+            
+            <% } %>
+            <tr id="add">
+                <td colspan="6" style="text-align: center;">
+                    <form action="/Add" method="get">
+                        <button>Add User</button>
+                        <a href="/">Go to home</a>
+                    </form>
+                    
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+    
+    
+</body>
+</html>

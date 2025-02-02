@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("includes/nav.ejs") %>
+    <br><br>
+    <div id="heading" style="padding: 5px;text-align: center;">
+        <h2 style="margin-top: 20px;"> Total users: <%= count %></h2>
+    </div>
+    <div class="main_container">
+        <div class="container">
+            <button class="home_btn" onclick="window.location.href='/Add'">Add User</button>
+            <button class="home_btn" onclick="window.location.href='/show'">Show Users</button>
+            <button class="home_btn" onclick="window.location.href='/show'">Update User</button>
+            <form action="/delete" method="get">
+                <button class="home_btn">Delete User</button>
+            </form>
+            
+
+        </div>
+    </div>
+    
+   
+</body>
+</html>

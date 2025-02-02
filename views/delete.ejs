@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <%- include("includes/nav.ejs") %>
+    <div class="form_container">
+        <form action="/show?_method=DELETE" method="post">
+        <table>
+            <tr>
+                <td><label>Enter Userid :</label></td>
+                <td><input type="number" placeholder="enter userid" name="input_id" id="input_id"></td>
+            </tr>
+            <tr>
+                <td><label>Enter Email :</label></td>
+                <td><input type="email" placeholder="enter email" name="input_email"></td>
+            </tr>
+            <tr>
+                <td><label>Enter Password :</label></td>
+                <td><input type="text" placeholder="enter Password" name="input_pass"></td>
+            </tr>
+
+        </table>
+        <br>
+        <button >Delete</button>
+    </form>
+    </div>
+    
+        
+     
+</body>
+</html>
